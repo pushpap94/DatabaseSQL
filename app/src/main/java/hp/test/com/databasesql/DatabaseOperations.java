@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
@@ -20,7 +21,13 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(CREATE_QUERY);
+        try {
+            sqLiteDatabase.execSQL(CREATE_QUERY);
+        }
+        catch (SQLiteException e)
+        {
+            e.printStackTrace();
+        }
 
     }
 

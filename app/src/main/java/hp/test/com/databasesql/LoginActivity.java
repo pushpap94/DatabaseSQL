@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     }while(cr.moveToNext());
 
-                    if(loginstatus)
+                   if(loginstatus)
                     {
                         Toast.makeText(getApplicationContext(),"Login success....\n Welcome"+NAME, Toast.LENGTH_LONG).show();
                         finish();
